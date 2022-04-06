@@ -31,7 +31,7 @@ public class ShoppingCartController {
 //        return
 //
 //        .isOk(shoppingCartService.queryCartListByUserId((Integer) request.getSession().getAttribute("userId")));
-        return JsonResult.isOk(shoppingCartService.queryCartListByUserId(104));
+        return JsonResult.isOk(shoppingCartService.queryCartListByUserId((Integer) request.getSession().getAttribute("userId")));
     }
 
     @RequestMapping("/update")
