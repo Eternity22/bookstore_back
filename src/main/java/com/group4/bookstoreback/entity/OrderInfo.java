@@ -20,6 +20,8 @@ public class OrderInfo {
   private String status;
   private String expressDeliveryCompany;
   private Integer addressId;
+  private String addressCode;
+  private String address;
   private String name;
   private String imgUrl;
   private Integer feedbackId;

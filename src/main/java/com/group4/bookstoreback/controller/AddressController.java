@@ -17,6 +17,7 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
+
     @RequestMapping("/all")
     public JsonResult addressList(@RequestBody UserInfo userInfo){
         return JsonResult.isOk(addressService.queryAllAddressByUserId(userInfo.getUserId()));
