@@ -57,6 +57,25 @@
             <artifactId>velocity</artifactId>
             <version>1.7</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.9.124.ALL</version>
+        </dependency>
+        <!-- 因为sdk有用这个包，所以需要有这个的哦。不过一般springboot项目已经自己引入了，就不用引入-->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- JSONObject -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
+        </dependency>
+
     </dependencies>
 
     <build>
