@@ -1,6 +1,7 @@
 package com.group4.bookstoreback.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.group4.bookstoreback.entity.Address;
 import com.group4.bookstoreback.entity.UserInfo;
 import com.group4.bookstoreback.service.AddressService;
@@ -35,6 +36,11 @@ public class AddressController {
 
     @RequestMapping("/update")
     public JsonResult updateAddress(@RequestBody Address address){
+        if (address.getIsDefault() == 1){
+            UpdateWrapper<Address> updateWrapper = new UpdateWrapper<>();
+            updateWrapper.eq("is_default",1).set("is_default",0);
+            addressService.update(updateWrapper);
+        }
         addressService.updateAddress(address);
         return JsonResult.isOk(addressService.queryAllAddressByUserId(address.getUserId()));
     }
