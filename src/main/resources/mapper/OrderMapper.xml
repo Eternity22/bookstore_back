@@ -5,13 +5,13 @@
 
 	<!--  查询所有商品 -->
 	<select id="queryOrderListByUserId" resultType="OrderInfo">
-		select order_info.id,order_info.goods_id,order_info.goods_id,order_info.address_id,goods_info.img_url,order_info.total_price,goods_info.info,order_info.number,goods_info.name,order_info.user_id,order_info.status,address.address_code,address.address
+		select order_info.id,order_info.goods_id,order_info.goods_id,order_info.address_id,goods_info.img_url,order_info.total_price,goods_info.info,order_info.number,goods_info.name,order_info.user_id,order_info.status,address.address_code,address.address,order_info.create_time,order_info.update_time
 		from goods_info ,order_info,address
 		where order_info.goods_id = goods_info.id and address.id = order_info.address_id and order_info.user_id = #{userId}
 	</select>
 
 	<select id="queryOrderDetailByOrderId" resultType="OrderInfo">
-		select order_info.id,order_info.goods_id,order_info.goods_id,order_info.address_id,goods_info.img_url,order_info.total_price,goods_info.info,order_info.number,goods_info.name,order_info.user_id,order_info.status,address.address_code,address.address,address.phone,address.receiver
+		select order_info.id,order_info.goods_id,order_info.goods_id,order_info.address_id,goods_info.img_url,order_info.total_price,goods_info.info,order_info.number,goods_info.name,order_info.user_id,order_info.status,address.address_code,address.address,address.phone,address.receiver,order_info.create_time,order_info.update_time
 		from goods_info ,order_info,address
 		where order_info.goods_id = goods_info.id and address.id = order_info.address_id and order_info.id = #{id}
 	</select>
