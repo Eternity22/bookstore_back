@@ -11,4 +11,5 @@ import java.util.List;
 public interface OrderMapper extends BaseMapper<OrderInfo> {
     List<OrderInfo> queryOrderListByUserId(Integer id);
     int cancelOrderByOrderId(Integer id);
+    OrderInfo queryOrderDetailByOrderId(Integer id);
 }

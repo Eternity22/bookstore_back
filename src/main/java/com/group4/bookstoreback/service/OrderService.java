@@ -10,5 +10,6 @@ public interface OrderService extends IService<OrderInfo> {
     int addOrder(OrderInfo orderInfo);
     List<OrderInfo> queryOrderListByUserId(Integer userId);
     int cancelOrderByOrderId(OrderInfo orderInfo);
+    OrderInfo queryOrderDetailByOrderId(Integer id);
 
 }

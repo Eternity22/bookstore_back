@@ -22,6 +22,8 @@ public class OrderInfo {
   private Integer addressId;
   private String addressCode;
   private String address;
+  private String receiver;
+  private String phone;
   private String name;
   private String imgUrl;
   private Integer feedbackId;

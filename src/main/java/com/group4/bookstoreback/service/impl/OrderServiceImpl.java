@@ -36,4 +36,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, OrderInfo> implem
         updateWrapper.eq("id",orderInfo.getId()).set("status", 0);
         return orderMapper.update(orderInfo,updateWrapper);
     }
+
+    @Override
+    public OrderInfo queryOrderDetailByOrderId(Integer id) {
+        return orderMapper.queryOrderDetailByOrderId(id);
+    }
 }

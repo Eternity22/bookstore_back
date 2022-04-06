@@ -32,6 +32,10 @@ public class OrderController {
         orderService.cancelOrderByOrderId(orderInfo);
         return JsonResult.isOk(orderService.queryOrderListByUserId(orderInfo.getUserId()));
     }
+    @RequestMapping("/queryOrderByOrderId")
+    public JsonResult queryOrderDetailByOrderId(@RequestBody OrderInfo orderInfo){
+        return JsonResult.isOk(orderService.queryOrderDetailByOrderId(orderInfo.getId()));
+    }
 
 
 
