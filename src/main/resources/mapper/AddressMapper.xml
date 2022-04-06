@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.group4.bookstoreback.mapper.AddressMapper">
+
+<!--	  查询该用户的所有地址 -->
+	<select id="queryAllAddressByUserId" resultType="Address">
+		select *
+		from address
+		where user_id = #{userId}
+	</select>
+
+<!--	<insert id="addAddress" parameterType="Address">-->
+<!--		insert into address(`user_id`,`receiver`,`phone`,`address`,`code`,`isdefault`,`state`)-->
+<!--		values (#{userId},#{receiver},#{phone},#{phone},#{code},#{isdefault},#{state})-->
+<!--	</insert>-->
+
+<!--	<update id="updateAddress" parameterType="Address">-->
+<!--		update address-->
+<!--		set `receiver` = #{receiver},`phone` = #{phone} ,`address` = #{address},`code` = #{code},`isdefault` = #{isdefault},`state` =  #{state}-->
+<!--		where id = #{id}-->
+<!--	</update>-->
+
+
+</mapper>
