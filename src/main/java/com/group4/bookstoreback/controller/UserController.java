@@ -9,6 +9,7 @@ import com.group4.bookstoreback.mapper.UserMapper;
 import com.group4.bookstoreback.service.UserService;
 import com.group4.bookstoreback.service.impl.UserServiceImpl;
 import com.group4.bookstoreback.utils.JsonResult;
+import com.group4.bookstoreback.utils.Md5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +32,7 @@ public class UserController {
     public JsonResult login(@RequestBody UserInfo userInfo,HttpServletRequest request){
 
         UserInfo user = userService.queryByUserName(userInfo.getUserName());
-        if(userInfo.getPassword().equals(user.getPassword())){
+        if(Md5Utils.GetMD5Code(userInfo.getPassword()).equals(user.getPassword())){
             HttpSession session = request.getSession();
             session.setAttribute("userName",user.getUserName());
             session.setAttribute("userId",user.getUserId());
@@ -46,6 +47,7 @@ public class UserController {
     public JsonResult register(@RequestBody UserInfo userInfo) {
         String userName = userInfo.getUserName();
         if (userService.queryByUserName(userName) == null && userInfo.getPassword() != null) {
+            userInfo.setPassword(Md5Utils.GetMD5Code(userInfo.getPassword())); ;
             boolean save = userService.save(userInfo);
             if (save) {
                 return JsonResult.isOk(userInfo);

@@ -11,10 +11,7 @@ import com.group4.bookstoreback.entity.AlipayBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-/**
- * 支付宝支付接口
- * @author 小道仙
- */
+
 @Component
 public class Alipay {
 
