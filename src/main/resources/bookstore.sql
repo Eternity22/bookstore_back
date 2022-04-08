@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 06/04/2022 16:12:46
+ Date: 08/04/2022 17:55:03
 */
 
 SET NAMES utf8mb4;
@@ -35,17 +35,15 @@ CREATE TABLE `address` (
   `postcode` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='用户地址表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COMMENT='用户地址表';
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
 BEGIN;
-INSERT INTO `address` VALUES (2, NULL, NULL, NULL, 0, '1', NULL, 0, '2022-04-03 19:40:40', '2022-04-03 19:40:40', NULL);
-INSERT INTO `address` VALUES (3, NULL, NULL, NULL, 0, '123', NULL, 0, '2022-04-03 19:41:57', '2022-04-03 19:55:42', NULL);
-INSERT INTO `address` VALUES (4, NULL, NULL, NULL, 0, NULL, NULL, 0, '2022-04-03 19:54:36', '2022-04-03 19:54:36', NULL);
-INSERT INTO `address` VALUES (5, 104, 'hw2', '12345678900', 131000, '淮微软件园', 1, 0, '2022-04-03 19:56:56', '2022-04-04 10:39:11', '123456');
-INSERT INTO `address` VALUES (6, 104, 'xz', '00123456789', 110101, '徐州工程学院', 0, 1, '2022-04-03 21:37:30', '2022-04-04 10:23:28', '654321');
+INSERT INTO `address` VALUES (5, 104, 'hw2', '12345678900', 131000, '淮微软件园1', 0, 0, '2022-04-03 19:56:56', '2022-04-06 16:52:39', '123456');
+INSERT INTO `address` VALUES (6, 104, 'xz', '00123456789', 110101, '徐州工程学院', 0, 1, '2022-04-03 21:37:30', '2022-04-07 16:13:19', '654321');
+INSERT INTO `address` VALUES (10, 104, '123', '12345665432', 120101, '123', 1, 1, '2022-04-07 15:55:20', '2022-04-07 16:13:19', '123123');
 COMMIT;
 
 -- ----------------------------
@@ -104,7 +102,6 @@ INSERT INTO `collection_info` VALUES (9, 104, NULL);
 INSERT INTO `collection_info` VALUES (10, 104, 7);
 INSERT INTO `collection_info` VALUES (11, 104, 8);
 INSERT INTO `collection_info` VALUES (12, 104, 9);
-INSERT INTO `collection_info` VALUES (13, 104, 3);
 INSERT INTO `collection_info` VALUES (18, 104, 11);
 INSERT INTO `collection_info` VALUES (19, 104, 4);
 INSERT INTO `collection_info` VALUES (21, 104, 2);
@@ -463,7 +460,7 @@ CREATE TABLE `order_info` (
   `create_time` date DEFAULT NULL COMMENT '交易时间',
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of order_info
@@ -491,6 +488,60 @@ INSERT INTO `order_info` VALUES (19, 1, NULL, 0.00, '1', 3, NULL, NULL, 5, 03, 1
 INSERT INTO `order_info` VALUES (20, 2, NULL, 216.00, '1', 12, NULL, NULL, 5, 03, 104, NULL, '2022-04-06', '2022-04-06 15:38:50');
 INSERT INTO `order_info` VALUES (21, 2, NULL, 0.00, '0', 52, NULL, NULL, 5, 03, 104, NULL, '2022-04-06', NULL);
 INSERT INTO `order_info` VALUES (22, 1, NULL, 69.00, '1', 3, NULL, NULL, 5, 03, 104, NULL, '2022-04-06', '2022-04-06 15:45:04');
+INSERT INTO `order_info` VALUES (23, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-06', '2022-04-06 22:32:32');
+INSERT INTO `order_info` VALUES (24, 1, NULL, 65.00, '1', 4, NULL, NULL, 0, 03, 104, NULL, '2022-04-06', '2022-04-06 22:32:45');
+INSERT INTO `order_info` VALUES (25, NULL, NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 03, NULL, NULL, '2022-04-06', '2022-04-06 22:57:56');
+INSERT INTO `order_info` VALUES (26, NULL, NULL, 0.00, NULL, NULL, NULL, NULL, NULL, 03, NULL, NULL, '2022-04-06', '2022-04-06 22:58:33');
+INSERT INTO `order_info` VALUES (27, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:02:15');
+INSERT INTO `order_info` VALUES (28, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:03:43');
+INSERT INTO `order_info` VALUES (29, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:06:20');
+INSERT INTO `order_info` VALUES (30, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:08:53');
+INSERT INTO `order_info` VALUES (31, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:12:29');
+INSERT INTO `order_info` VALUES (32, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:42:34');
+INSERT INTO `order_info` VALUES (33, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:44:39');
+INSERT INTO `order_info` VALUES (34, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 00:47:09');
+INSERT INTO `order_info` VALUES (35, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 00:55:36');
+INSERT INTO `order_info` VALUES (36, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 00:57:43');
+INSERT INTO `order_info` VALUES (37, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:00:34');
+INSERT INTO `order_info` VALUES (38, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:05:12');
+INSERT INTO `order_info` VALUES (39, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:06:58');
+INSERT INTO `order_info` VALUES (40, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:12:40');
+INSERT INTO `order_info` VALUES (41, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:14:38');
+INSERT INTO `order_info` VALUES (42, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:18:08');
+INSERT INTO `order_info` VALUES (43, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:20:39');
+INSERT INTO `order_info` VALUES (44, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:22:28');
+INSERT INTO `order_info` VALUES (45, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:23:47');
+INSERT INTO `order_info` VALUES (46, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 01:23:56');
+INSERT INTO `order_info` VALUES (47, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:39:04');
+INSERT INTO `order_info` VALUES (48, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:39:57');
+INSERT INTO `order_info` VALUES (49, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:40:49');
+INSERT INTO `order_info` VALUES (50, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:41:00');
+INSERT INTO `order_info` VALUES (51, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:41:46');
+INSERT INTO `order_info` VALUES (52, 1, NULL, 65.00, '1', 4, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:42:06');
+INSERT INTO `order_info` VALUES (53, 1, NULL, 65.00, '1', 4, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:43:25');
+INSERT INTO `order_info` VALUES (54, 1, NULL, 65.00, '1', 4, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 14:55:39');
+INSERT INTO `order_info` VALUES (55, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:04:58');
+INSERT INTO `order_info` VALUES (56, 2, NULL, 98.00, '1', 72, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:05:12');
+INSERT INTO `order_info` VALUES (57, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:07:44');
+INSERT INTO `order_info` VALUES (58, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:07:56');
+INSERT INTO `order_info` VALUES (59, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:10:41');
+INSERT INTO `order_info` VALUES (60, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:10:52');
+INSERT INTO `order_info` VALUES (61, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:13:19');
+INSERT INTO `order_info` VALUES (62, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:15:26');
+INSERT INTO `order_info` VALUES (63, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:16:24');
+INSERT INTO `order_info` VALUES (64, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:17:56');
+INSERT INTO `order_info` VALUES (65, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:18:14');
+INSERT INTO `order_info` VALUES (66, 1, NULL, 69.00, '1', 3, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:22:58');
+INSERT INTO `order_info` VALUES (67, 1, NULL, 69.00, '1', 3, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:27:00');
+INSERT INTO `order_info` VALUES (68, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:33:22');
+INSERT INTO `order_info` VALUES (69, 1, NULL, 69.00, '1', 3, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:35:53');
+INSERT INTO `order_info` VALUES (70, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 15:38:24');
+INSERT INTO `order_info` VALUES (71, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:38:30');
+INSERT INTO `order_info` VALUES (72, 1, NULL, 69.00, '1', 3, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:44:56');
+INSERT INTO `order_info` VALUES (73, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 15:52:00');
+INSERT INTO `order_info` VALUES (74, 1, NULL, 99.00, '1', 2, NULL, NULL, 0, 03, 104, NULL, '2022-04-07', '2022-04-07 15:56:22');
+INSERT INTO `order_info` VALUES (75, 1, NULL, 99.00, '1', 2, NULL, NULL, 6, 03, 104, NULL, '2022-04-07', '2022-04-07 16:10:58');
+INSERT INTO `order_info` VALUES (76, 1, NULL, 99.00, '1', 2, NULL, NULL, 10, 03, 104, NULL, '2022-04-07', '2022-04-07 16:33:21');
 COMMIT;
 
 -- ----------------------------
@@ -506,13 +557,14 @@ CREATE TABLE `shopping_cart` (
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of shopping_cart
 -- ----------------------------
 BEGIN;
-INSERT INTO `shopping_cart` VALUES (20, 104, 2.00, 49.00, 72, NULL, NULL);
+INSERT INTO `shopping_cart` VALUES (25, 107, 1.00, 99.00, 2, '2022-04-06 00:00:00', '2022-04-06 00:00:00');
+INSERT INTO `shopping_cart` VALUES (27, 104, 1.00, 99.00, 2, '2022-04-06 00:00:00', '2022-04-06 00:00:00');
 COMMIT;
 
 -- ----------------------------
@@ -520,8 +572,8 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
-  `user_name` varchar(10) NOT NULL DEFAULT '' COMMENT '用户名，登录时需要用的',
   `user_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(10) NOT NULL DEFAULT '' COMMENT '用户名，登录时需要用的',
   `nick_name` varchar(10) DEFAULT '' COMMENT '昵称',
   `real_name` varchar(10) DEFAULT '' COMMENT '真实姓名，别人不可见',
   `birthday` date DEFAULT NULL,
@@ -529,19 +581,20 @@ CREATE TABLE `user_info` (
   `email` varchar(30) DEFAULT NULL,
   `address` varchar(50) DEFAULT '' COMMENT '默认收货地址',
   `grade` int DEFAULT '1' COMMENT '会员等级',
-  `password` varchar(10) DEFAULT NULL COMMENT '密码',
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '密码',
   `create_time` datetime DEFAULT NULL,
   `update_time` datetime DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb3;
 
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
 BEGIN;
-INSERT INTO `user_info` VALUES ('admin', 104, 'admin', 'admin', '2020-02-22', NULL, NULL, '', 1, 'admin', NULL, NULL);
-INSERT INTO `user_info` VALUES ('admin1', 105, '', '', NULL, NULL, NULL, '', 0, 'admin1', NULL, NULL);
-INSERT INTO `user_info` VALUES ('111', 106, '', '', NULL, NULL, NULL, '', 0, '111', NULL, NULL);
+INSERT INTO `user_info` VALUES (103, 'admin1', 'admin', 'admin', '2020-02-22', NULL, NULL, '', 1, 'admin', NULL, NULL);
+INSERT INTO `user_info` VALUES (104, 'admin', '', '', NULL, NULL, '1140068392@qq.com', '', 1, '21232F297A57A5A743894A0E4A801FC3', '2022-04-07 15:06:17', '2022-04-07 15:06:17');
+INSERT INTO `user_info` VALUES (107, '123', '', '', NULL, NULL, '1140068392@qq.com', '', 1, '202CB962AC59075B964B07152D234B70', '2022-04-07 15:03:00', '2022-04-07 15:03:00');
+INSERT INTO `user_info` VALUES (109, 'admin2', '', '', NULL, NULL, '11@qq.com', '', 1, '21232F297A57A5A743894A0E4A801FC3', '2022-04-08 17:54:17', '2022-04-08 17:54:17');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
